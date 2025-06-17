@@ -1,0 +1,75 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<div th:include="header :: header"></div>
+<script src="js/home.js" type="text/javascript"></script>
+<title>Job Run History</title>
+
+
+
+</head>
+<body>
+
+	<div th:fragment="content">
+
+		<div class="container">
+			<div class="divBorder">
+				<p>
+				<h1 class="title">Job History</h1>
+				</p>
+			</div>
+			<!-- <form action="#" th:action="@{/jobHistory}" method="post"> -->
+<div id="mainHistory">
+            <button name="historyRefresh" class="btnMailchimp" id="refreshHistory"
+                th:text="#{btn.submit.refreshHistory}">Refresh</button>
+            
+			<table class="tableHistory" id="historyTable">
+				<thead>
+					<tr class="historyTableHdr">
+						<th><p th:text="#{label.syncDirection}"></p></th>
+						<th><p th:text="#{label.batchStatus}"></p></th>
+						<th><p th:text="#{label.createdDate}"></p></th>
+                        <th><p th:text="#{label.numRecords}"></p></th>
+						<th><p th:text="#{label.errorCount}"></p></th>
+					</tr>
+				</thead>
+
+				<tbody id="historyBody">
+				
+					
+				</tbody>
+
+			</table>
+</div>
+			<!-- 	</form> -->
+		
+			<div id="popUpDiv" class="displayNone">
+				<div class="divBorder">
+				<p>
+				<h1 class="title">Error Data</h1>
+				</p>
+				<a href="#" id="backToHistory">Back</a>
+			</div>
+	<table class="tableHistory" id="errorSkipTable">
+				<thead>
+					<tr class="historyTableHdr">
+						<th><p th:text="#{label.stepType}"></p></th>
+						<th><p th:text="#{label.ErrorDesc}"></p></th>
+					</tr>
+				</thead>
+				<tbody id="errorSkipBody">
+								
+				</tbody>
+
+			</table>
+	</div>
+
+		</div>
+		
+		
+	</div>
+	
+	
+</body>
+
+</html>

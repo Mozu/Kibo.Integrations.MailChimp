@@ -1,0 +1,20 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+    <body>
+        <div th:fragment="content">
+            <div>
+                <label class="requiredContent">
+                    <strong>ApiUserName</strong>
+                </label>
+                <div class="controls" style="margin-bottom: 20px;">
+                    <input type="text" id="user_name" data-bind="value: chimpSettings.user_name, event: {keypress: enableSave}" class="input-medium" required="required"/>
+                </div>
+                <label class="requiredContent">
+                    <strong>ApiKey</strong>
+                </label>
+                <div class="controls" style="margin-bottom: 20px;">
+                    <input type="text" id="api_key" data-bind="value: chimpSettings.api_key, event: {keypress: enableSave}" class="input-medium" required="required"/>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

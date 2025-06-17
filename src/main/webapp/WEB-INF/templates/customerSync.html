@@ -1,0 +1,63 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<!-- <div th:include="header :: header" ></div> 
+	<script src="js/home.js" type="text/javascript" ></script> -->
+<title>Customer Sync Settings</title>
+<link href="css/Site.css" rel="stylesheet"></link>
+</head>
+<body>
+
+	<div th:fragment="content">
+		<div class="container">
+			<div class="divBorder">
+				<h1 class="title">Synchronize Data</h1>
+			</div>
+
+			<div>
+				<span> <label th:text="#{label.customerSyncMessage}"></label>
+				</span>
+			</div>
+			<span> <label th:text="#{label.syncMessageErr}"
+				id="batchSaveError" class="displayNone">Error Occurred. Please try again after some time.</label>
+			</span>
+			<br></br>
+			<div>
+			  <label for="datepicker">Export All Orders Since: </label>
+              <input type="text" id="datepicker" placeholder="Last Export Date/Time"/>
+             </div>  
+			
+			<table class="mcTable">
+			<tr>
+			<td width="50%"><label th:text="#{label.chooseDirection}" align="top">direction</label> </td>
+			
+			<td>
+				
+					 <select th:field="${mailchimpSyncModel.syncDirection}"
+						class="mailchimpDD" id="mcDirectionDD">
+						<option th:each="mozuLookup : ${syncDirectionList}"
+							th:value="${mozuLookup.getKey()}"
+							th:text="${mozuLookup.getValue()}">Please Select</option>
+						</select>
+				
+				
+			</td>
+			</tr>
+		
+			</table>
+
+			<button name="createSync" class="btnMailchimp" id="createBatchEntry"
+				th:text="#{btn.submit.customerSync}">createSync</button>
+			<br></br> <span><p>
+            <label th:text="#{label.syncMessage}" id="batchSaveSuccess"
+                     class="successMessage displayNone">Success</label>
+            <label th:text="#{label.appDisabled}" id="appDisabled"
+                     class="successMessage displayNone">Disabled</label>
+            <label th:text="#{label.invalidList}" id="invalidList"
+                     class="successMessage displayNone">Invalid List</label>
+			</p></span>
+
+		</div>
+	</div>
+</body>
+</html>

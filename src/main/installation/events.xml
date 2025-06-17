@@ -1,0 +1,17 @@
+<Events xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://developer.mozu.com/v1">
+  <EventsHandler>
+    <EndPoint>https://integrations2-{su}.mozu.com/mailchimp/events</EndPoint>
+    <Event>Application Disabled</Event>
+    <Event>Application Enabled</Event>
+    <Event>Application Installed</Event>
+    <Event>Application Upgraded</Event>
+    <Event>Customer Account Created</Event>
+    <Event>Customer Account Updated</Event>
+    <Event>Customer Segment Created</Event>
+    <Event>Customer Segment Customer Added</Event>
+    <Event>Customer Segment Customer Removed</Event>
+    <Event>Customer Segment Deleted</Event>
+    <Event>Customer Segment Updated</Event>
+    <Event>Order Closed</Event>
+  </EventsHandler>
+</Events>

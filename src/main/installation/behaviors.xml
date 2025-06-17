@@ -1,0 +1,33 @@
+<Behaviors xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://developer.mozu.com/v1">
+  <Behavior>Product Read</Behavior>
+  <Behavior>Discount Read</Behavior>
+  <Behavior>Discount Create</Behavior>
+  <Behavior>Discount Update</Behavior>
+  <Behavior>Discount Delete</Behavior>
+  <Behavior>Customer Read</Behavior>
+  <Behavior>Customer Update</Behavior>
+  <Behavior>Customer Delete</Behavior>
+  <Behavior>Customer Create</Behavior>
+  <Behavior>Tenant Read</Behavior>
+  <Behavior>General Settings Read</Behavior>
+  <Behavior>General Settings Update</Behavior>
+  <Behavior>Shipping Settings Read</Behavior>
+  <Behavior>Order Settings Read</Behavior>
+  <Behavior>Order Settings Update</Behavior>
+  <Behavior>Cart Read</Behavior>
+  <Behavior>Order Read</Behavior>
+  <Behavior>Application Status Read</Behavior>
+  <Behavior>Application Status Update</Behavior>
+  <Behavior>Application Status Create</Behavior>
+  <Behavior>Application Status Delete</Behavior>
+  <Behavior>Application Status Enable</Behavior>
+  <Behavior>Site Read Content</Behavior>
+  <Behavior>Channel Read</Behavior>
+  <Behavior>Location Read</Behavior>
+  <Behavior>Stock Notification Read</Behavior>
+  <Behavior>Read installed applications</Behavior>
+  <Behavior>Update installed applications</Behavior>
+  <Behavior>Create EntityList Definition</Behavior>
+  <Behavior>Update EntityList Definition</Behavior>
+  <Behavior>Delete EntityList Definition</Behavior>
+</Behaviors>

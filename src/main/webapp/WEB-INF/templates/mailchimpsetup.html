@@ -1,0 +1,138 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<!-- <div th:include="header :: header" ></div> -->
+<script src="js/home.js" type="text/javascript"></script>
+<title>MailChimp Setup</title>
+<link href="css/Site.css" rel="stylesheet"></link>
+</head>
+<body>
+	<div th:fragment="content">
+
+		<div class="container">
+
+			<div class="divBorder">
+				<h4 class="title">Configure MailChimp Settings</h4>
+			</div>
+
+			<div th:switch="${userExist}">
+				<div th:case="'true'">
+					<table>
+						<thead>
+							<tr>
+
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td colspan="3">
+									<div  class="divBorder">
+										MailChimp API Key
+									</div>
+								</td>
+							</tr>
+							<tr style="height: 58px;">
+								<td colspan="2">
+									<div style="height:100%">
+										<input type="text"
+											class="mailchimpText configureEditMailchimpTxt "
+											th:field="${{mailchimpSyncModel.apiKey}}"
+											></input>
+											<img id="greenTick1" class="displayNone" src="images/greenTick.jpg" height="15px" width="15px" alt="Data have been saved successfully"/>
+								<img id="redCross1"  class="displayNone" src="images/redCross.jpg" height="15px" width="15px" alt="Invalid Api Key"/>
+									</div>
+									
+								</td>
+								<td>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2" class="displayNone" id="invalidApiKey1">
+										
+										
+							</td>
+							</tr>
+
+							<tr>
+								<td colspan="3" id="successSaveApikey" class="displayNone">
+									<p>
+										<label th:text="#{label.successSaveApikey}"
+											 class="successMessage"></label>
+									</p>
+								</td>
+							</tr>
+
+							<!-- site and dd changes ends -->
+						</tbody>
+					</table>
+
+				</div>
+				<div th:case="*">
+					<table class="mcTable">
+						<thead>
+							<tr>
+
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>
+								<div  class="divBorder">
+										MailChimp API Key
+									</div>
+								</td>
+							</tr>
+							<tr style="height: 54px;">
+								<td><div style="height: 100%">
+										
+										 <input type="text"
+											class="mailchimpText configureEditMailchimpTxt"
+											th:field="${{mailchimpSyncModel.apiKey}}"></input>
+											<img id="greenTick2" class="displayNone" src="images/greenTick.jpg" height="15px" width="15px" alt="Data have been saved successfully"/>
+								<img id="redCross2" class="displayNone" src="images/redCross.jpg" height="15px" width="15px" alt="Invalid Api Key"/>
+									</div></td>
+									
+									<td  class=""></td>
+									
+								<td>
+									
+									</td>
+							</tr>
+
+							
+
+						</tbody>
+					</table>
+
+
+				</div>
+				
+				<div id="mappedData">
+					<div class="DisplayNone" id="siteListMapDiv" >
+						<div  class="divBorder">
+							List Name
+						</div>
+						<table id="siteMapTable" class="mcTable">
+							<tbody id="siteMapBody">
+								<tr>
+									<td><select class="mailchimpDD" name="mapListName" id="mapListId1"></select></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+
+
+			</div>
+
+		</div>
+	</div>
+	
+	<div class="">
+						
+									
+									</div>
+									
+																		</body>
+
+</html>

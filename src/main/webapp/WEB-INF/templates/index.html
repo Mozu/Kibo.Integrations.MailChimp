@@ -1,0 +1,71 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+	 <div th:include="header :: header" ></div> 
+	<script src="js/home.js" type="text/javascript" ></script>
+	<title>Mozu Integration Template</title>
+	<script>
+	/* $(document.ready(function(){
+	
+	var self = this;
+	
+	
+    self.tenantId = $.QueryString("tenantId");
+    
+  
+        $.ajax("api/config/settings/"+ self.tenantId, {
+            data: ko.mapping.toJSON(self.chimpSettings),
+            type: "POST",
+            dataType: 'json',
+            contentType: "application/json; charset=utf-8",
+            success: function (result) {
+            	alert("success");
+            }
+        });
+   
+	})); */
+	</script>
+</head>
+<body>
+<div class="container">
+        <p> please wait.......</p>
+ 
+        
+       <!-- <form action="#" th:action="@{/saveMailchimpUser}" th:object="${mailchimpAuthentication}" method="post">
+        <label  th:text="${welcome}" th:field="${welcome}"></label>
+        <table>
+        <thead>
+          <tr>
+           
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td th:text="#{label.username}">username</td>
+            <td>
+            <input type="text"  th:field="${{mailchimpAuthentication.username}}" />
+            </td>
+           
+          </tr>
+          
+           <tr>
+            <td th:text="#{label.password}" >password</td>           
+            <td><input type="text" th:field="${{mailchimpAuthentication.password}}"/></td>           
+          </tr>
+          <tr>
+          <td>
+          <div>
+  <label  th:text="#{label.covered}">Covered</label>
+  <input type="checkbox" th:field="${{mailchimpAuthentication.saveMailchimpInfoFlag}}" />
+</div>
+          </td>
+          <td> 
+          <button type="submit" name="saveMailchimpUser" th:text="#{btn.connect}">Connect12</button>
+          </td>
+          </tr>
+        </tbody>
+      </table>
+      </form> --> 
+</div>
+ <input type="hidden" id="initalConfig" name="initalConfig" value="False"/> 			 	
+</body>
+</html>	

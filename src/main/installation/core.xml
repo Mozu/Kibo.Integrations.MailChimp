@@ -1,0 +1,9 @@
+<Core xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://developer.mozu.com/v1">
+  <DevAccountNamespace>mzint</DevAccountNamespace>
+  <Name>Mozu MailChimp Application</Name>
+  <AppId>redacted</AppId>
+  <Version>1.1.0</Version>
+  <SharedSecret>redacted</SharedSecret>
+  <MozuApiVersion>1.14.15028.0</MozuApiVersion>
+  <Description />
+</Core>

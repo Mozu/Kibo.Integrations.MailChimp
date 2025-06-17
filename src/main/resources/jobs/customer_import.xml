@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/mvc"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:beans="http://www.springframework.org/schema/beans"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:batch="http://www.springframework.org/schema/batch" xmlns:util="http://www.springframework.org/schema/util"
+    xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
+        http://www.springframework.org/schema/batch http://www.springframework.org/schema/batch/spring-batch-2.2.xsd
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.2.xsd">
+
+    <batch:job id="mcCustomerImportJob">
+        <batch:step id="customerImportStep" parent="parentStep">
+            <batch:tasklet>
+                <batch:chunk 
+                    reader="customerImportReader"
+                    processor="customerImportProcessor"
+                    writer="customerImportWriter" 
+                    commit-interval="1" 
+                    skip-limit="30">
+                    <batch:listeners>
+                        <batch:listener ref="mozuSkipListener"></batch:listener>
+                        <batch:listener ref="mozuStepExecutionListener"></batch:listener>
+                    </batch:listeners>
+                    <batch:skippable-exception-classes>
+                        <batch:include class="java.lang.Exception" />
+                    </batch:skippable-exception-classes>
+                </batch:chunk>
+            </batch:tasklet>
+        </batch:step>
+        <batch:listeners>
+            <batch:listener ref="jobFailureListener" />
+        </batch:listeners>
+    </batch:job>
+
+    <beans:bean id="parentStep"
+      class="org.springframework.batch.core.step.factory.FaultTolerantStepFactoryBean"         
+      abstract="true">
+    
+       <beans:property name="backOffPolicy">
+           <beans:bean class="org.springframework.retry.backoff.FixedBackOffPolicy">
+               <beans:property name="backOffPeriod" value="2000"/>
+           </beans:bean>
+       </beans:property>
+    </beans:bean>
+    
+</beans:beans>
